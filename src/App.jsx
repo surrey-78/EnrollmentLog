@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import LoginComponent from './components/LoginComponent';
-import SignupComponent from './components/SignUpComponent';
+import EnrollComponent from './components/EnrollComponent';
 import './App.css'
 
 const App = () => {
@@ -10,14 +10,15 @@ const App = () => {
       <div>
         <nav>
          
-              <Link to="/login"><button>Login</button></Link>
-              <Link to="/signup"><button>Sign Up</button></Link>
+              <Link to="/login"><button className='box1'>Login</button></Link>
+              <Link to="/enroll"><button className='box1'>Enroll</button></Link>
 
         </nav>
 
         <Routes>
+        <Route path='/' element={<EnrollComponent />} />
         <Route path="/login" element={<LoginComponent />} />
-        <Route path="/signup" element={<SignupComponent />} />
+        <Route path="/enroll" element={<EnrollComponent />} />
       </Routes>
       </div>
     </Router>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SignupComponent = () => {
+const EnrollComponent = () => {
   const [name , setName] = useState('');
   const [regno, setRegno] = useState('');
   const [password, setPassword] = useState('');
@@ -50,8 +50,9 @@ const SignupComponent = () => {
   };
 
   return (
+    <div className='container'> 
     <div>
-      <h2>Sign Up</h2>
+      <h2>Enroll</h2>
       <form onSubmit={handleSubmit}>
         <label>Name :</label>
         <input type="text" value={name} onChange={handleNameChange} required />
@@ -66,31 +67,31 @@ const SignupComponent = () => {
         <input type="password" value={confirmPassword} onChange={handleConfirmPasswordChange} required />
         <br />
         <label>Subject 1:</label>
-        <select name='sub1' id='sub1' value={sub1}>
+        <select name='sub1' id='sub1' value={sub1} onChange={handleSub1Change}>
           <option value=" "></option>
           <option value="English">English</option>
           <option value="Maths">Maths</option>
           <option value="Science">Science</option>
         </select>
         <label>Subject 2:</label>
-        <select name='sub2' id='sub2' value={sub2}>
+        <select name='sub2' id='sub2' value={sub2} onChange={handleSub2Change}>
           <option value=" "></option>
           <option value="English">English</option>
           <option value="Maths">Maths</option>
           <option value="Science">Science</option>
         </select>
         <label>Subject 3:</label>
-        <select name='sub3' id='sub3' value={sub3}>
+        <select name='sub3' id='sub3' value={sub3} onChange={handleSub3Change}>
           <option value=" "></option>
           <option value="English">English</option>
           <option value="Maths">Maths</option>
           <option value="Science">Science</option>
-        </select>
-        <button type="submit">Sign Up</button>
+        </select><br/>
+        <button type="submit" className='box'>Enroll</button>
       </form>
     </div>
-    
+    </div>
   );
 };
 
-export default SignupComponent;
+export default EnrollComponent;
