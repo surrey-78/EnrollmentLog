@@ -1,11 +1,12 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
 const LoginComponent = () => {
-  const [email, setEmail] = useState('');
+  const [regno, setRegno] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const handleRegnoChange = (e) => {
+    setRegno(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
@@ -14,16 +15,19 @@ const LoginComponent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Login submitted:', { email, password });
-    alert('Login In Successfull');
-  };
+
+    axios.post(`http://localhost:3500/api/v1/login`, {regno : regno,
+  password : password})
+  .then(response => console.log(response.data))
+  .catch(error => console.log(error.response.data))
+  }
 
   return (
     <div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <label>Email:</label>
-        <input type="email" value={email} onChange={handleEmailChange} required />
+        <label>Register No. :</label>
+        <input type="text" value={regno} onChange={handleRegnoChange} required />
         <br />
         <label>Password:</label>
         <input type="password" value={password} onChange={handlePasswordChange} required />
