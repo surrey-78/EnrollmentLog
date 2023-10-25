@@ -15,7 +15,6 @@ const LoginComponent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     axios.post(`http://localhost:3500/api/v1/login`, {regno : regno,
   password : password})
   .then(response => console.log(response.data))
@@ -32,7 +31,7 @@ const LoginComponent = () => {
         <label>Password:</label>
         <input type="password" value={password} onChange={handlePasswordChange} required />
         <br />
-        <button type="submit">Login</button>
+        <button type="submit" >Login</button>
       </form>
     </div>
   );

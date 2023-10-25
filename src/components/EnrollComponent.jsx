@@ -46,8 +46,9 @@ const EnrollComponent = () => {
       return;
     }
 
-    console.log('Signup submitted:', { email, password });
+    console.log('Signup submitted:', { regno, password });
   };
+
 
   return (
     <div className='container'> 
@@ -87,7 +88,7 @@ const EnrollComponent = () => {
           <option value="Maths">Maths</option>
           <option value="Science">Science</option>
         </select><br/>
-        <button type="submit" className='box'>Enroll</button>
+        <button type="submit" className='box' >Enroll</button>
       </form>
     </div>
     </div>
